@@ -37,6 +37,7 @@ signupForm.onsubmit = async (e) => {
     email,
     password,
     options: {
+     emailRedirectTo: 'https://kartier777.github.io/Tras-la-pagina/',
       data: {
         name: name
       }
