@@ -52,3 +52,9 @@ signupForm.onsubmit = async (e) => {
   signupMessage.textContent =
     'Cuenta creada. Revisa tu correo electrónico para confirmarla.';
 };
+const loginBtn = document.querySelector('#loginBtn');
+const loginDialog = document.querySelector('#loginDialog');
+const cancelLogin = document.querySelector('#cancelLogin');
+
+loginBtn.onclick = () => loginDialog.showModal();
+cancelLogin.onclick = () => loginDialog.close();
