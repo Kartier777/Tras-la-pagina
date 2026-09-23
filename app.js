@@ -15,3 +15,9 @@ async function search(q='ficción contemporánea'){
 }
 function show(b){const v=b.volumeInfo;detail.innerHTML=`<div class="detailGrid"><img src="${img(v)}"><div><p class="eyebrow">FICHA DEL LIBRO</p><h2>${v.title}</h2><p class="muted">${(v.authors||['Autor no disponible']).join(', ')} · ${v.publishedDate||'Fecha no disponible'}</p><div>${(v.categories||[]).map(x=>`<span class="pill">${x}</span>`).join('')}</div><h3>¿De qué trata?</h3><p>${clean(v.description||'Google Books no proporciona una descripción para esta edición.')}</p>${v.pageCount?`<p><b>${v.pageCount}</b> páginas</p>`:''}<p class="muted">Información bibliográfica y descripción: Google Books.</p><button onclick="alert('En la siguiente fase conectaremos usuarios, listas y base de datos.')">Quiero leer</button></div></div>`;dialog.showModal()}
 form.onsubmit=e=>{e.preventDefault();search(input.value.trim())};document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>b.dataset.focus?input.focus():search(b.dataset.q));document.querySelector('#closeDialog').onclick=()=>dialog.close();dialog.onclick=e=>{if(e.target===dialog)dialog.close()};search();
+const signupBtn = document.querySelector('#signupBtn');
+const signupDialog = document.querySelector('#signupDialog');
+const cancelSignup = document.querySelector('#cancelSignup');
+
+signupBtn.onclick = () => signupDialog.showModal();
+cancelSignup.onclick = () => signupDialog.close();
