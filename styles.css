@@ -114,3 +114,24 @@
 #loginMessage {
   margin: 0;
 }
+#loginDialog #loginForm {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+#loginDialog #loginForm label {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+#loginDialog #loginForm input {
+  display: block !important;
+  width: 100% !important;
+}
+
+#loginDialog #loginForm button {
+  display: block !important;
+  width: 100% !important;
+}
