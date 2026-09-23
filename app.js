@@ -1,3 +1,6 @@
+const SUPABASE_URL = 'https://pwsfsprvogugyuwqbnti.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_4dokQQ3cq558ZQfb0-KIug_z0L4rKUM';
+
 const booksEl=document.querySelector('#books'), statusEl=document.querySelector('#status'), titleEl=document.querySelector('#resultTitle'), form=document.querySelector('#searchForm'), input=document.querySelector('#query'), dialog=document.querySelector('#bookDialog'), detail=document.querySelector('#detail');
 const fallback='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="440"><rect width="100%" height="100%" fill="#eee8da"/><text x="50%" y="48%" text-anchor="middle" font-family="serif" font-size="24" fill="#315344">Entre Libros</text><text x="50%" y="56%" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6b766f">Sin portada</text></svg>`);
 function clean(s=''){return s.replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').trim()}
