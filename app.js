@@ -58,3 +58,26 @@ const cancelLogin = document.querySelector('#cancelLogin');
 
 loginBtn.onclick = () => loginDialog.showModal();
 cancelLogin.onclick = () => loginDialog.close();
+const loginForm = document.querySelector('#loginForm');
+const loginMessage = document.querySelector('#loginMessage');
+
+loginForm.onsubmit = async (e) => {
+  e.preventDefault();
+
+  const email = document.querySelector('#loginEmail').value.trim();
+  const password = document.querySelector('#loginPassword').value;
+
+  loginMessage.textContent = 'Iniciando sesión...';
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    loginMessage.textContent = 'Error: ' + error.message;
+    return;
+  }
+
+  loginMessage.textContent = '¡Sesión iniciada correctamente!';
+};
